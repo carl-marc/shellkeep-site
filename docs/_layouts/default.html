@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Shellkeep</title>
+    <meta name="author" content="carl-marc">
+
+    <meta property="og:title" content="{{ page.og_title | default: page.title }}" />
+    <meta property="og:description" content="{{ page.og_description | default: page.description }}" />
+    <meta property="og:locale" content="en_US">
+    <link rel="canonical" href="{{ page.url | prepend: site.url }}">
+    <meta property="og:url" content="{{ page.url | prepend: site.url }}" />
+    <meta property="og:site_name" content="Shellkeep">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{ site.url }}/favicon.ico" />
+    <meta property="og:logo" content="{{ site.url }}/favicon.ico" />
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <header class="page-header" role="banner">
+      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+      <hr>
+      <h3 id="contact-us">Contact Us</h3>
+      <p>Please get in touch for <a href="https://shellkeep.hamlab.dev/support">support, bugs, feedback, troubleshooting</a> or anything else!</p>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+# Site settings
+title: Shellkeep
+url: https://shellkeep.hamlab.dev
+baseurl: ""
+
+# Author settings
+author:
+  name: carl-marc
+
+# Theme settings
+theme: jekyll-theme-cayman
+github:
+  is_project_page: false
+
+# Build settings
+markdown: kramdown
+permalink: pretty
