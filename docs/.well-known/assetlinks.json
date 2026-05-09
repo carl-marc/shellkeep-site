@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.hamlab.glyphcards",
+      "sha256_cert_fingerprints": [
+        "82:70:05:8C:7C:8E:5B:FF:F5:3A:8A:58:1F:4F:12:F4:3E:A6:4D:50:04:F3:1A:B8:22:4B:6E:6B:3D:8A:5A:BB"
+      ]
+    }
+  }
+]

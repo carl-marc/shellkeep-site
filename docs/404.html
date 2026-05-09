@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1a1a1a">
+  <title>Shellkeep</title>
+  <style>
+    :root {
+      --fg: #1a1a1a;
+      --muted: #555;
+      --accent: #6750a4;
+      --bg: #fafafa;
+      --panel: #f1f0f5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --fg: #f1f1f1; --muted: #b0b0b0; --bg: #121212; --panel: #1f1d24; }
+    }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 64px 24px;
+      text-align: center;
+      line-height: 1.5;
+    }
+    h1 { font-size: 28px; margin: 0 0 12px; }
+    p { color: var(--muted); margin: 8px 0; }
+    .code {
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 8px;
+      padding: 18px 24px;
+      background: var(--panel);
+      color: var(--accent);
+      border-radius: 14px;
+      display: inline-block;
+      margin: 24px 0 8px;
+    }
+    .stores { display: flex; gap: 12px; justify-content: center; margin-top: 28px; flex-wrap: wrap; }
+    .stores a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--fg);
+      color: var(--bg);
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .hidden { display: none; }
+    .home-link { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main id="invite" class="hidden">
+    <h1>You're invited to Shellkeep!</h1>
+    <p>Install the app and enter this code in the first hour to earn 1000 coins for both of you.</p>
+    <div class="code" id="code" aria-label="Invite code"></div>
+    <p id="copy-note">The code is also copied to your clipboard.</p>
+    <div class="stores">
+      <a href="https://apps.apple.com/app/id6757331713" id="appstore">App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=com.hamlab.glyphcards" id="playstore">Play Store</a>
+    </div>
+  </main>
+
+  <main id="notfound">
+    <h1>Page not found</h1>
+    <p>This link doesn't seem to point anywhere we know.</p>
+    <p><a class="home-link" href="/">Back to shellkeep.hamlab.dev</a></p>
+  </main>
+
+  <script>
+    (function () {
+      var match = location.pathname.match(/^\/invite\/([A-Z0-9]{6})\/?$/i);
+      if (!match) {
+        return;
+      }
+
+      var code = match[1].toUpperCase();
+      document.title = 'Join me on Shellkeep — code ' + code;
+      document.getElementById('code').textContent = code;
+      document.getElementById('invite').classList.remove('hidden');
+      document.getElementById('notfound').classList.add('hidden');
+
+      try {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(code);
+        } else {
+          document.getElementById('copy-note').classList.add('hidden');
+        }
+      } catch (e) {
+        document.getElementById('copy-note').classList.add('hidden');
+      }
+
+      // Hide store buttons that aren't relevant for this device.
+      var ua = navigator.userAgent || '';
+      var isIOS = /iPhone|iPad|iPod/.test(ua);
+      var isAndroid = /Android/.test(ua);
+      if (isIOS) {
+        document.getElementById('playstore').classList.add('hidden');
+      } else if (isAndroid) {
+        document.getElementById('appstore').classList.add('hidden');
+      }
+    })();
+  </script>
+</body>
+</html>

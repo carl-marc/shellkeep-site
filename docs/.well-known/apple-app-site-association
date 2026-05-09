@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["R9BX866T7L.com.hamlab.glyphcards"],
+        "components": [
+          {
+            "/": "/invite/*",
+            "comment": "Invite deep links handled by DeepLinkService"
+          }
+        ]
+      }
+    ]
+  }
+}
