@@ -58,13 +58,19 @@
 <body>
   <main id="invite" class="hidden">
     <h1>You're invited to Shellkeep!</h1>
-    <p>Install the app and enter this code in the first hour to earn 1000 coins for both of you.</p>
+    <p>Install the app and enter this code within the first hour. You and your friend each earn 1000 coins once you create your 50th card.</p>
     <div class="code" id="code" aria-label="Invite code"></div>
     <p id="copy-note">The code is also copied to your clipboard.</p>
     <div class="stores">
       <a href="https://apps.apple.com/app/id6757331713" id="appstore">App Store</a>
       <a href="https://play.google.com/store/apps/details?id=com.hamlab.glyphcards" id="playstore">Play Store</a>
     </div>
+  </main>
+
+  <main id="invalid" class="hidden">
+    <h1>Invalid invite code</h1>
+    <p>Invite codes are 6 characters. Check the link and try again.</p>
+    <p><a class="home-link" href="/">Back to shellkeep.hamlab.dev</a></p>
   </main>
 
   <main id="notfound">
@@ -75,8 +81,13 @@
 
   <script>
     (function () {
+      var isInvitePath = /^\/invite\/.+/.test(location.pathname);
       var match = location.pathname.match(/^\/invite\/([A-Z0-9]{6})\/?$/i);
       if (!match) {
+        if (isInvitePath) {
+          document.getElementById('invalid').classList.remove('hidden');
+          document.getElementById('notfound').classList.add('hidden');
+        }
         return;
       }
 
