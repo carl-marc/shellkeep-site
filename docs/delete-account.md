@@ -21,15 +21,13 @@ After 3 days, your account and all associated data will be **permanently deleted
 ## What data is deleted
 
 - Player profile and username
-- Card collection and inventory
-- Currencies (coins, gems)
+- Authentication credentials
 - Club membership
-- Auction and marketplace history
-- Mission progress and stats
+- Inbox and social data
 
 ## What data is retained
 
-None. All data is permanently removed after the 3-day grace period.
+Some gameplay data (such as card and auction records) may be retained in an anonymised, orphaned state with no link to your identity. This data cannot be used to identify you after account deletion.
 
 ## Need help?
 
