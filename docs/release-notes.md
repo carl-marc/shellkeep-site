@@ -10,9 +10,3 @@ permalink: /release-notes
 
 ## v1.0.0
 - [Release Notes](/release-notes/v1-0-0)
-
----
-
-### Contact Us
-
-Please get in touch for [support, bugs, feedback, troubleshooting](/support) or anything else!
