@@ -5,6 +5,9 @@ permalink: /release-notes
 
 # Release Notes
 
+## v1.4.0
+- [Release Notes](/release-notes/v1-4-0)
+
 ## v1.2.1
 - [Release Notes](/release-notes/v1-2-1)
 
