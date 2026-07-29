@@ -5,6 +5,15 @@ permalink: /release-notes
 
 # Release Notes
 
+## v2.1.2
+- [Release Notes](/release-notes/v2-1-2)
+
+## v2.1.1
+- [Release Notes](/release-notes/v2-1-1)
+
+## v2.1.0
+- [Release Notes](/release-notes/v2-1-0)
+
 ## v2.0.0
 - [Release Notes](/release-notes/v2-0-0)
 
